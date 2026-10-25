@@ -1,0 +1,26 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build installer
+        shell: pwsh
+        run: ./app/Build-Setup.ps1
+      - name: Checksum
+        shell: pwsh
+        run: (Get-FileHash dist/ShowLef-Setup.exe -Algorithm SHA256).Hash.ToLower() | Tee-Object dist/ShowLef-Setup.exe.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ShowLef-Setup-unsigned
+          path: |
+            dist/ShowLef-Setup.exe
+            dist/ShowLef-Setup.exe.sha256
+      # Signing step (SignPath Foundation) is added here once the project is accepted.

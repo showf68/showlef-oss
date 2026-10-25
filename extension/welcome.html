@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ShowLef</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <!-- Ouverte a l'installation de l'extension : derniere etape = installer le programme ShowLef (Chrome ne permet
+       pas a une extension de lancer un programme : un double-clic de l'utilisateur reste indispensable). -->
+  <main class="card">
+    <img class="logo" src="icons/icon_128.png" alt="" width="72" height="72">
+    <h1 id="title"></h1>
+    <p class="lead" id="lead"></p>
+    <ol class="steps">
+      <li class="done"><b>1</b><span id="s1"></span></li>
+      <li id="li2"><b>2</b><span id="s2"></span></li>
+      <li id="li3"><b>3</b><span id="s3"></span></li>
+    </ol>
+    <button class="big" id="get"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg><span id="getTx"></span></button>
+    <p class="hint" id="hint" hidden></p>
+    <p class="status" id="status"><span class="dot"></span><span id="statusTx"></span></p>
+  </main>
+  <script src="config.js"></script>
+  <script src="i18n.js"></script>
+  <script src="welcome.js"></script>
+</body>
+</html>

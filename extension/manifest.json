@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "ShowLef",
+  "short_name": "ShowLef",
+  "version": "0.7.31",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnaMHthuPhpWhD7YwOxWae97OyQzmdBTa5z6W72k1avNNwdP1Z8FIOuFK5c7KvWTg4rwtX6ImIt5A567d+bO7SfBP7dFupA5KyKFq3OqH3YZUNzw86J6crWNbko9ZBbEpJd6RyQMMlL9xEZq+me9gR2BH6Gu4FGZadGYQgma43HeLoAzXF5ytFqa3NEoHGUfyRhikBWksUXW9AsdjC7koyyh1QnuNTNCIx7d2RqKBGG5Gtj8mq2mK6JanQuagB+oxnHMXrxu4GxUa57zzTc8e88/dnednI7CRzCZNanfu2rp8frFtbe/3iMahA4fLjm82PcZmq0UkAY4Hs13scfOUvwIDAQAB",
+  "description": "Free audio and video download manager: detects media on any page, multi-connection downloads, streams, MP3 conversion.",
+  "minimum_chrome_version": "116",
+  "permissions": ["webRequest", "nativeMessaging", "storage", "tabs", "contextMenus", "cookies", "downloads", "scripting", "favicon"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "ShowLef",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon_16.png", "32": "icons/icon_32.png", "48": "icons/icon_48.png", "128": "icons/icon_128.png" }
+  },
+  "icons": { "16": "icons/icon_16.png", "32": "icons/icon_32.png", "48": "icons/icon_48.png", "128": "icons/icon_128.png" },
+  "commands": {
+    "download-best": { "suggested_key": { "default": "Alt+Shift+D" }, "description": "Download the best media of this tab" }
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["config.js", "i18n.js", "content.js"],
+    "all_frames": true,
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [{ "resources": ["content.css", "fonts/*.woff2"], "matches": ["<all_urls>"] }]
+}
