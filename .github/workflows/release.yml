@@ -23,4 +23,4 @@ jobs:
           path: |
             dist/ShowLef-Setup.exe
             dist/ShowLef-Setup.exe.sha256
-      # Signing step (SignPath Foundation) is added here once the project is accepted.
+      # No code signing (SignPath Foundation declined 26/10/2026).

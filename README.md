@@ -34,11 +34,9 @@ No secret is needed to build: the one-time Google sign-in goes through a page of
 * `api.i-call.me/showlef_feedback.php`: the message the user sends from the Contact window (and, if the user chooses, support information with paths anonymised).
 * `www.gravatar.com`: the account picture shown next to the settings button (an MD5 hash of the e-mail address, as Gravatar requires); without a Gravatar the initial is shown.
 
-## Code signing policy
+## Code signing
 
-Free code signing is provided by [SignPath.io](https://signpath.io), certificate by the
-[SignPath Foundation](https://signpath.org). Only the release binary built from this repository by the GitHub Actions
-workflow `release.yml` is submitted for signing; every release is approved by the maintainer below.
+The Windows installer is **not code-signed** yet (the SignPath Foundation application was declined on 26 Oct 2026 for lack of public visibility). Windows SmartScreen may warn on first run. Verify the download with the SHA-256 published in `showlef-latest.json` on ext.i-call.me and in each GitHub release.
 
-* Committer, reviewer and approver: [showf68](https://github.com/showf68)
+* Maintainer: [showf68](https://github.com/showf68)
 * Privacy: see "What the program sends over the network" above. No other data leaves the PC.
