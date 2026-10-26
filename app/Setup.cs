@@ -17,7 +17,7 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 
 static class SetupMain {
-    public const string Version = "0.7.59";
+    public const string Version = "0.8.0";
     // Extension non empaquetee (cle fixe du manifeste) + version du Chrome Web Store (identifiant attribue le 19/10/2026).
     static readonly string[] ExtensionIds = { "mepcfiemlmpffknhaebjocpddbaahdfc", "hibookeofnmdllfleebckdkbgijpklfb" };   // non empaquetee, Chrome Web Store
     static readonly string[] Browsers = { @"Google\Chrome", @"Microsoft\Edge", @"BraveSoftware\Brave-Browser", "Chromium" };

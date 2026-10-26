@@ -11,7 +11,7 @@ using System.Web.Script.Serialization;
 
 static class App {
     public const string Name = "ShowLef";            // nom de travail (placeholder), cf README
-    public const string Version = "0.7.59";
+    public const string Version = "0.8.0";
     public const string HostName = "com.showlef.app";
     public static readonly string DefaultDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ShowLef");
     public static string Dir = DefaultDir;           // --dir : donnees a part pour les bancs d'essai
