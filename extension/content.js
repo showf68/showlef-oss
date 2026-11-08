@@ -3,6 +3,8 @@
 (function () {
   if (window.__showlefLoaded) return;
   window.__showlefLoaded = true;
+  // Garde : extension rechargee = ancien script orphelin, chrome.storage/runtime absents -> on ne fait rien.
+  if (typeof chrome === 'undefined' || !chrome.runtime || !chrome.runtime.id || !chrome.storage || !chrome.storage.local) return;
 
   var I = SHOWLEF_I18N;
   var MIN_W = 200, MIN_H = 120, AUDIO_MIN_W = 150;
